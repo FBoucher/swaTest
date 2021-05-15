@@ -15,7 +15,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var response = await Http.GetStringAsync("http://localhost:7071/api/secured/SecuredTest?name=cloudies");
+        var response = await Http.GetStringAsync("https://lively-stone-04362d30f.azurestaticapps.net/api/secured/SecuredTest?name=cloudies");
         result = response.ToString();
     }
 
