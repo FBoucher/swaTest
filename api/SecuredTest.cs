@@ -14,7 +14,7 @@ namespace Company.Function
     {
         [FunctionName("SecuredTest")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "secured")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "secured/SecuredTest")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -27,7 +27,7 @@ namespace Company.Function
 
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "This SECURED HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This SECURED HTTP triggered function executed successfully.";
+                : $"Bonjour Hi, {name}. This SECURED HTTP triggered function executed successfully.";
 
             return new OkObjectResult(responseMessage);
         }
